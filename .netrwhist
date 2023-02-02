@@ -1,0 +1,3 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/mathiasolsen/Dropbox (Personal)/Uni/sem3/DOA/sw3doa-labx-hashmap/i3doa-hashmap-unittest'

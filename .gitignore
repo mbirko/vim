@@ -1,0 +1,7 @@
+# mac and temp files 
+.DS_store
+*.swp
+.idea
+.vs_code
+
+
