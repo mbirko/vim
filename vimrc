@@ -15,7 +15,8 @@ set shiftwidth=4
 set expandtab
 
 syntax on
-" setting packs! 
+
+" Packs! 
 if v:version >= 800
     packadd! nerdtree
     packadd! termdebug
