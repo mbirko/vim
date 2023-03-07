@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/birk/workspace/wccadm/docs'
+let g:netrw_dirhist_9='/home/birk/workspace/wccadm'
+let g:netrw_dirhist_8='/home/birk/workspace/wccadm/wccadm'
+let g:netrw_dirhist_7='/home/birk/workspace/wccadm'
+let g:netrw_dirhist_6='/home/birk/temp/1/foo'
+let g:netrw_dirhist_5='/home/birk/temp/1'
+let g:netrw_dirhist_4='/home/birk/temp'
+let g:netrw_dirhist_3='/home/birk/temp/2'
+let g:netrw_dirhist_2='/home/birk/temp/2/boo'
 let g:netrw_dirhist_1='/Users/mathiasolsen/Dropbox (Personal)/Uni/sem3/DOA/sw3doa-labx-hashmap/i3doa-hashmap-unittest'

@@ -15,8 +15,11 @@ set shiftwidth=4
 set expandtab
 
 syntax on
-packadd! nerdtree
-packadd! termdebug
+" setting packs! 
+if v:version >= 800
+    packadd! nerdtree
+    packadd! termdebug
+endif
 
 " Keyboard mappings! 
 map <C-J> <C-w>j
@@ -31,3 +34,4 @@ nnoremap <space> :nohlsearch<bar>:echo<cr>
 
 " Enable omnicomple 
 set omnifunc=syntaxcomplete#complete
+
