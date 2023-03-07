@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/Users/mathiasolsen/Dropbox (Personal)/Uni/sem3/DOA/sw3doa-labx-hashmap/i3doa-hashmap-unittest'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/scada/Projects/test/bin'
+let g:netrw_dirhist_2='/home/scada/Projects/test'
+let g:netrw_dirhist_3='/home/scada/Projects/test/config'
+let g:netrw_dirhist_4='/home/scada/workspace/molsen/python_playground/first_wccadm'
+let g:netrw_dirhist_5='/home/scada/workspace/molsen/python_playground/connection_issue'
+let g:netrw_dirhist_6='/home/scada/workspace/molsen/python_playground'
+let g:netrw_dirhist_7='/home/scada/workspace/molsen/python_playground/first_wccadm'

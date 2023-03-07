@@ -15,9 +15,11 @@ set shiftwidth=4
 set expandtab
 
 syntax on
-packadd! nerdtree
-packadd! termdebug
-
+" Packs! 
+if v:version >= 800
+    packadd! nerdtree
+    packadd! termdebug
+endif
 " Keyboard mappings! 
 map <C-J> <C-w>j
 map <C-k> <C-w>k
