@@ -1,3 +1,6 @@
 [submodule "pack/plugins/opt/nerdtree"]
 	path = pack/plugins/opt/nerdtree
 	url = git@github.com:preservim/nerdtree.git
+[submodule "pack/plugins/opt/vim-dirdiff"]
+	path = pack/plugins/opt/vim-dirdiff
+	url = git@github.com:will133/vim-dirdiff.git

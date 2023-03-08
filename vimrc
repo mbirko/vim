@@ -19,6 +19,7 @@ syntax on
 " Packs! 
 if v:version >= 800
     packadd! nerdtree
+    packadd! vim-dirdiff
     packadd! termdebug
 endif
 
