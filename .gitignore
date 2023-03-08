@@ -3,5 +3,6 @@
 *.swp
 .idea
 .vs_code
+*.netrwhist
 
 
