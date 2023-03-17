@@ -1,3 +1,6 @@
+" guttentags  
+let g:gutentags_trace = 1
+
 " line numbering set
 set nu
 set rnu
@@ -20,6 +23,7 @@ syntax on
 if v:version >= 800
     packadd! nerdtree
     packadd! vim-dirdiff
+    packadd! vim-gutentags
     packadd! termdebug
 endif
 

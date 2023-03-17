@@ -4,3 +4,6 @@
 [submodule "pack/plugins/opt/vim-dirdiff"]
 	path = pack/plugins/opt/vim-dirdiff
 	url = git@github.com:will133/vim-dirdiff.git
+[submodule "pack/plugins/opt/vim-gutentags"]
+	path = pack/plugins/opt/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git
