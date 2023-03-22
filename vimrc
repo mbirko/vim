@@ -1,13 +1,14 @@
 " guttentags  
-let g:gutentags_trace = 1
 
 " line numbering set
 set nu
 set rnu
+
 " search realted set
 set hlsearch		" search high liging
 set incsearch		" incremental search high ligting
 set ic			" ignore case, removes case senitity when searching
+
 " formatiing set
 set nowrap
 set colorcolumn=100
