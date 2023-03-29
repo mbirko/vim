@@ -1,5 +1,5 @@
-" guttentags  
-
+" guttentags
+let g:gutentags_trace=1
 " line numbering set
 set nu
 set rnu
