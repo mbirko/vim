@@ -7,3 +7,6 @@
 [submodule "pack/plugins/opt/vim-gutentags"]
 	path = pack/plugins/opt/vim-gutentags
 	url = git@github.com:ludovicchabant/vim-gutentags.git
+[submodule "pack/plugins/opt/ale"]
+	path = pack/plugins/opt/ale
+	url = https://github.com/dense-analysis/ale
