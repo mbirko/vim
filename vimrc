@@ -22,7 +22,7 @@ syntax on
 
 " Packs! 
 if v:version >= 800
-"    packadd! nerdtree
+    packadd! nerdtree
     packadd! vim-dirdiff
     packadd! vim-gutentags
     packadd! termdebug
