@@ -1,5 +1,3 @@
-" guttentags
-let g:gutentags_trace=1
 " line numbering set
 set nu
 set rnu
@@ -20,22 +18,39 @@ set expandtab
 
 syntax on
 
+" No swap file
+set noswapfile
+
+" Keyboard mappings! 
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l 
+map <C-_> <C-w>_
+
+
+" Autosave setup: 
+augroup autosave
+    autocmd!
+    autocmd BufRead, 8 if &filletype == "" | setlocal ft=text | endif
+    autocmd FileType * autocmd TextChanged,insertLeave <buffer> if &readonly == 0 | silent write | endif
+augroup end
+
+
 " Packs! 
 if v:version >= 800
     packadd! ale
-    packadd! nerdtree
+"    packadd! nerdtree
     packadd! vim-dirdiff
     packadd! vim-gutentags
     packadd! termdebug
 endif
 
-" Keyboard mappings! 
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-h> <C-w>h
-map <C-l> <C-w>l 
-map <C-_> <C-w>_
-
+" Netrw 
+let g:netrw_usetap=1
+nmap <unique> <C-w>e <Plug>NetrwShrink
+" Opens Netrw on the left with 
+map - :Lexplore<cr>:vertical resize 30<cr>
 function! ApplyNetrwMaps()
     nmap <buffer> <c-l> <c-w>l
 endfunction
