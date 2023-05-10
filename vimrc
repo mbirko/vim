@@ -39,7 +39,7 @@ augroup end
 
 " Packs! 
 if v:version >= 800
-    packadd! ale
+"    packadd! ale
 "    packadd! nerdtree
     packadd! vim-dirdiff
     packadd! vim-gutentags
@@ -47,10 +47,10 @@ if v:version >= 800
 endif
 
 " Netrw 
-let g:netrw_usetap=1
-nmap <unique> <C-w>e <Plug>NetrwShrink
-" Opens Netrw on the left with 
+
+" Opens Netrw on the left with a size of 30 when '-' is pressed
 map - :Lexplore<cr>:vertical resize 30<cr>
+
 function! ApplyNetrwMaps()
     nmap <buffer> <c-l> <c-w>l
 endfunction
