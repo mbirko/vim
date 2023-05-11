@@ -6,7 +6,7 @@ function Python_set_up()
           \   '.pythontags': expand('~/.vim/python_file_lister.py') . ' ///absolute'
           \ }
           \ }
-    set makeprg=rustc\ %<.py
+    set makeprg=flake8\ %<.py
 endfunction
 
 augroup python

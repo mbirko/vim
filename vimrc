@@ -28,6 +28,11 @@ noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l 
 map <C-_> <C-w>_
 
+" Keyboard mappings! 
+tnoremap <C-j> <C-w>j
+tnoremap <C-k> <C-w>k
+tnoremap <C-h> <C-w>h
+tnoremap <C-l> <C-w>l 
 
 " Autosave setup: 
 augroup autosave
