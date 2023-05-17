@@ -43,10 +43,7 @@ augroup autosave
         \ if &readonly == 0 
         \ && &filetype !=# "qf"
         \ && &filetype !=# "netrw"
-        \ | write | endif
-
-
-
+        \ | silent write | endif
 augroup end
 
 
@@ -63,16 +60,6 @@ endif
 
 " Opens Netrw on the left with a size of 30 when '-' is pressed
 map - :Lexplore<cr>:vertical resize 30<cr>
-
-function! ApplyNetrwMaps()
-    nmap <buffer> <c-l> <c-w>l
-endfunction
-
-augroup netrw_maps
-    autocmd!
-    autocmd filetype netrw call ApplyNetrwMaps()
-augroup END
-
 
 
 " disapling search highling between searches by hitting space
