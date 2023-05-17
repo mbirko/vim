@@ -1,3 +1,4 @@
+
 " line numbering set
 set nu
 set rnu
@@ -9,7 +10,7 @@ set ic			" ignore case, removes case senitity when searching
 
 " formatiing set
 set nowrap
-set colorcolumn=100
+set colorcolumn=80
 
 set tabstop=4
 set softtabstop=4
@@ -38,7 +39,14 @@ tnoremap <C-l> <C-w>l
 augroup autosave
     autocmd!
     autocmd BufRead, 8 if &filletype == "" | setlocal ft=text | endif
-    autocmd FileType * autocmd TextChanged,insertLeave <buffer> if &readonly == 0 | silent write | endif
+    autocmd FileType * autocmd TextChanged,insertLeave <buffer> 
+        \ if &readonly == 0 
+        \ && &filetype !=# "qf"
+        \ && &filetype !=# "netrw"
+        \ | write | endif
+
+
+
 augroup end
 
 
@@ -77,4 +85,8 @@ set omnifunc=syntaxcomplete#complete
 set dictionary+=./dict/python
 
 set complete+=k
+
+" Easy update of vimrc
+nmap <Leader>s :source $MYVIMRC<cr>
+nmap <Leader>v :e $MYVIMRC<cr>
 
