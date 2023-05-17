@@ -3,12 +3,12 @@
 set nu
 set rnu
 
-" search realted set
-set hlsearch		" search high liging
-set incsearch		" incremental search high ligting
-set ic			" ignore case, removes case senitity when searching
+" search related set
+set hlsearch		" search high lighting
+set incsearch		" incremental search high lighting
+set ic			" ignore case, removes case sensitivity when searching
 
-" formatiing set
+" formatting set
 set nowrap
 set colorcolumn=80
 
