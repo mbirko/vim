@@ -7,6 +7,12 @@ function Python_set_up()
           \ }
           \ }
     set makeprg=flake8\ %<.py
+    set tabstop=8
+    set softtabstop=4
+    set shiftwidth=4
+    set smarttab
+    set expandtab
+    set autoindent
 endfunction
 
 augroup python
