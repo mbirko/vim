@@ -10,3 +10,6 @@
 [submodule "pack/plugins/opt/ale"]
 	path = pack/plugins/opt/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "pack/plugins/opt/vimtex"]
+	path = pack/plugins/opt/vimtex
+	url = git@github.com:lervag/vimtex.git

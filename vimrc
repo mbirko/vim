@@ -62,6 +62,7 @@ if v:version >= 800
     packadd! vim-dirdiff
     packadd! vim-gutentags
     packadd! termdebug
+    packadd! vimtex
 endif
 
 " Netrw 
