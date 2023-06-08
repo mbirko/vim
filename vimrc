@@ -3,12 +3,12 @@
 set nu
 set rnu
 
-" search realted set
-set hlsearch		" search high liging
-set incsearch		" incremental search high ligting
-set ic			" ignore case, removes case senitity when searching
+" search related set
+set hlsearch		" search high lighting
+set incsearch		" incremental search high lighting
+set ic			" ignore case, removes case sensitivity when searching
 
-" formatiing set
+" formatting set
 set nowrap
 set colorcolumn=80
 
@@ -29,11 +29,20 @@ noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l 
 map <C-_> <C-w>_
 
-" Keyboard mappings! 
+" :term Keyboard mappings! 
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-h> <C-w>h
 tnoremap <C-l> <C-w>l 
+
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " Autosave setup: 
 augroup autosave
@@ -68,9 +77,8 @@ nnoremap <space> :nohlsearch<bar>:echo<cr>
 " Enable omnicomple 
 set omnifunc=syntaxcomplete#complete
 " auto completion
-
+set completeopt=longest,menuone
 set dictionary+=./dict/python
-
 set complete+=k
 
 " Easy update of vimrc

@@ -5,7 +5,7 @@ function Rst_set_up()
     set makeprg=make\ clean\ html\ SPHINXOPTS=-q
     set spell
     set tabstop=3
-    set shiftwidth=2
+    set shiftwidth=3
     set expandtab
 endfunction
 
