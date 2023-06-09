@@ -13,3 +13,6 @@
 [submodule "pack/plugins/opt/vimtex"]
 	path = pack/plugins/opt/vimtex
 	url = git@github.com:lervag/vimtex.git
+[submodule "pack/plugins/opt/ultisnips"]
+	path = pack/plugins/opt/ultisnips
+	url = git@github.com:SirVer/ultisnips.git

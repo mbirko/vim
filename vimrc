@@ -34,14 +34,17 @@ tnoremap <C-k> <C-w>k
 tnoremap <C-h> <C-w>h
 tnoremap <C-l> <C-w>l
 
-function! CleverTab()
-   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-      return "\<Tab>"
-   else
-      return "\<C-N>"
-   endif
-endfunction
-inoremap <Tab> <C-R>=CleverTab()<CR>
+" disapling search highling between searches by hitting space
+nnoremap <space> :nohlsearch<bar>:echo<cr>
+
+" function! CleverTab()
+"    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+"       return "\<Tab>"
+"    else
+"       return "\<C-N>"
+"    endif
+" endfunction
+" inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " Autosave setup:
 augroup autosave
@@ -56,6 +59,7 @@ augroup end
 
 
 " Packs! 
+filetype plugin indent on
 if v:version >= 800
 "    packadd! ale
 "    packadd! nerdtree
@@ -63,16 +67,20 @@ if v:version >= 800
     packadd! vim-gutentags
     packadd! termdebug
     packadd! vimtex
+        let g:tex_flavor='latex'
+        let g:vimtex_view_method='zathura'
+        let g:vimtex_quickfix_mode=0
+    packadd! ultisnips
+        let g:UltisnipsSnippetDirectories=[$HOME."/.vim/UltiSnips"]
+        let g:UltiSnipsExpandTrigger = '<tab>'
+        let g:UltiSnipsJumpForwardTrigger = '<tab>'
+        let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 endif
 
 " Netrw 
-
 " Opens Netrw on the left with a size of 30 when '-' is pressed
 map - :Lexplore<cr>:vertical resize 30<cr>
 
-
-" disapling search highling between searches by hitting space
-nnoremap <space> :nohlsearch<bar>:echo<cr>
 
 " Enable omnicomple 
 set omnifunc=syntaxcomplete#complete
