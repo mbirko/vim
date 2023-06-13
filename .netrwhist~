@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/scada/workspace/wccadm/src/wccadm/tests'
+let g:netrw_dirhist_1='/home/scada/workspace/wccadm/src/wccadm'
+let g:netrw_dirhist_0='/home/scada/workspace/wccadm/src'
+let g:netrw_dirhist_9='/home/scada/workspace/wccadm'
+let g:netrw_dirhist_8='/home/scada/workspace/wccadm/src/wccadm/tests'
+let g:netrw_dirhist_7='/home/scada/workspace/wccadm/src/wccadm'
+let g:netrw_dirhist_6='/home/scada/workspace/wccadm/src'
+let g:netrw_dirhist_5='/home/scada/workspace/wccadm'
+let g:netrw_dirhist_4='/home/scada/workspace/wccadm/src/wccadm/tests'
+let g:netrw_dirhist_3='/home/scada/workspace/wccadm/src/wccadm'

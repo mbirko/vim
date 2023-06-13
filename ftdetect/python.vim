@@ -6,13 +6,13 @@ function Python_set_up()
           \   '.pythontags': expand('~/.vim/python_file_lister.py') . ' ///absolute'
           \ }
           \ }
-    set makeprg=flake8\ %<.py
-    set tabstop=8
-    set softtabstop=4
-    set shiftwidth=4
-    set smarttab
-    set expandtab
-    set autoindent
+    setlocal makeprg=flake8\ --ignore=E501,E503\ %<.py
+    setlocal tabstop=8
+    setlocal softtabstop=4
+    setlocal shiftwidth=4
+    setlocal smarttab
+    setlocal expandtab
+    setlocal autoindent
 endfunction
 
 augroup python
@@ -22,6 +22,6 @@ augroup end
 
 augroup quickfix
     autocmd! 
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd VimEnter * cwindow
+    autocmd QuickFixCmdPost [^l]* botright cwindow
+    autocmd VimEnter * botright cwindow
 augroup end

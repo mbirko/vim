@@ -1,4 +1,3 @@
-
 " line numbering set
 set nu
 set rnu
@@ -22,18 +21,18 @@ syntax on
 " No swap file
 set noswapfile
 
-" Keyboard mappings! 
+" Keyboard mappings!
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
-noremap <C-l> <C-w>l 
+noremap <C-l> <C-w>l
 map <C-_> <C-w>_
 
-" :term Keyboard mappings! 
+" :term Keyboard mappings!
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-h> <C-w>h
-tnoremap <C-l> <C-w>l 
+tnoremap <C-l> <C-w>l
 
 function! CleverTab()
    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
@@ -44,12 +43,12 @@ function! CleverTab()
 endfunction
 inoremap <Tab> <C-R>=CleverTab()<CR>
 
-" Autosave setup: 
+" Autosave setup:
 augroup autosave
     autocmd!
     autocmd BufRead, 8 if &filletype == "" | setlocal ft=text | endif
-    autocmd FileType * autocmd TextChanged,insertLeave <buffer> 
-        \ if &readonly == 0 
+    autocmd FileType * autocmd TextChanged,insertLeave <buffer>
+        \ if &readonly == 0
         \ && &filetype !=# "qf"
         \ && &filetype !=# "netrw"
         \ | silent write | endif
