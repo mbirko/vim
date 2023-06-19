@@ -2,11 +2,15 @@
 au BufRead,BufNewFile *.rst call Rst_set_up()
 
 function Rst_set_up()
-    set makeprg=make\ clean\ html\ SPHINXOPTS=-q
-    set spell
-    set tabstop=3
-    set shiftwidth=3
-    set expandtab
+    setlocal makeprg=make\ clean\ html\ SPHINXOPTS=-q
+    setlocal spell
+    setlocal tabstop=3
+    setlocal shiftwidth=3
+    setlocal softtabstop=3
+    setlocal expandtab
+    setlocal wrap linebreak nolist
+    nmap <buffer> j gj
+    nmap <buffer> k gk
 endfunction
 
 augroup rst
