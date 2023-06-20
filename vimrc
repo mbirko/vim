@@ -37,15 +37,6 @@ tnoremap <C-l> <C-w>l
 " disapling search highling between searches by hitting space
 nnoremap <space> :nohlsearch<bar>:echo<cr>
 
-" function! CleverTab()
-"    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-"       return "\<Tab>"
-"    else
-"       return "\<C-N>"
-"    endif
-" endfunction
-" inoremap <Tab> <C-R>=CleverTab()<CR>
-
 " Autosave setup:
 augroup autosave
     autocmd!
@@ -54,6 +45,7 @@ augroup autosave
         \ if &readonly == 0
         \ && &filetype !=# "qf"
         \ && &filetype !=# "netrw"
+        \ && &filetype !=# "vimtex-toc"
         \ | silent write | endif
 augroup end
 
@@ -72,9 +64,9 @@ if v:version >= 800
         let g:vimtex_quickfix_mode=0
     packadd! ultisnips
         let g:UltisnipsSnippetDirectories=[$HOME."/.vim/UltiSnips"]
-        let g:UltiSnipsExpandTrigger = '<tab>'
-        let g:UltiSnipsJumpForwardTrigger = '<tab>'
-        let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+        let g:UltiSnipsExpandTrigger = '<C-S>'
+        let g:UltiSnipsJumpForwardTrigger = '<C-S>'
+        let g:UltiSnipsJumpBackwardTrigger = '<C-D>'
 endif
 
 " Netrw 
@@ -88,6 +80,17 @@ set omnifunc=syntaxcomplete#complete
 set completeopt=longest,menuone
 set dictionary+=./dict/python
 set complete+=k
+
+" Auto complete
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-n>"
+   endif
+endfunction
+
+inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " Easy update of vimrc
 nmap <Leader>s :source $MYVIMRC<cr>
