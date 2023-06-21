@@ -643,6 +643,55 @@ endsnippet
 
 # vim:ft=snippets
 
+###################
+# Formatting Text #
+###################
+
+snippet ix "italic text" Aw
+	\\textit{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet bf "bold face text" Aw
+\\textbf{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet under "underline text" Aw
+\\underline{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet over "overline text"
+\\overline{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet emp "emphasize text"
+\\emph{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet sc "small caps text"
+\\textsc{${1:${VISUAL:text}}}${0}
+endsnippet
+
+#Choosing font
+snippet sf "sans serife text"
+\\textsf{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet rm "roman font text"
+\\textrm{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet tt "typewriter (monospace) text"
+\\texttt{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet tsub "subscripted text"
+\\textsubscript{${1:${VISUAL:text}}}${0}
+endsnippet
+
+snippet tsup "superscripted text"
+\\textsuperscript{${1:${VISUAL:text}}}${0}
+endsnippet
+
 
 ############
 # SECTIONS #
