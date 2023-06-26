@@ -22,25 +22,34 @@ syntax on
 " No swap file
 set noswapfile
 
-" Keyboard mappings! 
+" Keyboard mappings!
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
-noremap <C-l> <C-w>l 
+noremap <C-l> <C-w>l
 map <C-_> <C-w>_
 
-" Keyboard mappings! 
+" :term Keyboard mappings!
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-h> <C-w>h
-tnoremap <C-l> <C-w>l 
+tnoremap <C-l> <C-w>l
 
-" Autosave setup: 
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+
+" Autosave setup:
 augroup autosave
     autocmd!
     autocmd BufRead, 8 if &filletype == "" | setlocal ft=text | endif
-    autocmd FileType * autocmd TextChanged,insertLeave <buffer> 
-        \ if &readonly == 0 
+    autocmd FileType * autocmd TextChanged,insertLeave <buffer>
+        \ if &readonly == 0
         \ && &filetype !=# "qf"
         \ && &filetype !=# "netrw"
         \ | silent write | endif
@@ -68,9 +77,8 @@ nnoremap <space> :nohlsearch<bar>:echo<cr>
 " Enable omnicomple 
 set omnifunc=syntaxcomplete#complete
 " auto completion
-
+set completeopt=longest,menuone
 set dictionary+=./dict/python
-
 set complete+=k
 
 " Easy update of vimrc
