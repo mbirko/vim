@@ -1,3 +1,4 @@
+set backspace=eol,start,indent
 " line numbering set
 set nu
 set rnu
