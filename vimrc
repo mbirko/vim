@@ -58,9 +58,24 @@ augroup end
 
 " Packs! 
 if v:version >= 800
-"    packadd! ale
-"    packadd! nerdtree
-    packadd! vim-dirdiff
+    packadd! ale
+    let g:ale_completion_enabled=1
+    let g:ale_sign_column_always=1
+    let g:ale_linters = {
+    \  'scala': ['metals'],
+    \}
+    let g:ale_fixers = {
+    \  'scala': ['scalafmt','trim_whitespace', 'remove_trailing_lines'],
+    \}
+
+    nnoremap <silent> <leader>f :ALEFix<CR>
+    nnoremap <silent> <leader>e :ALEToggle<CR>
+    nnoremap <silent> ]e :ALENextWrap<CR>
+    nnoremap <silent> [e :ALEPreviousWrap<CR>
+    nnoremap <leader>r :ALEFindReferences -quickfix<CR> :cwindow<cr>
+    nnoremap <leader>i :ALEGoToImplementation<CR>
+    nnoremap <leader>d :ALEGoToDefinition<CR>
+
     packadd! vim-gutentags
     packadd! termdebug
 endif
@@ -69,17 +84,14 @@ endif
 
 " Opens Netrw on the left with a size of 30 when '-' is pressed
 map - :Lexplore<cr>:vertical resize 30<cr>
-
+let g:netrw_liststyle=3
+let g:netrw_banner=0
 
 " disapling search highling between searches by hitting space
 nnoremap <space> :nohlsearch<bar>:echo<cr>
 
-" Enable omnicomple 
-set omnifunc=syntaxcomplete#complete
 " auto completion
-set completeopt=longest,menuone
-set dictionary+=./dict/python
-set complete+=k
+set completeopt=menu,longest,menuone,noselect,preview,noinsert
 
 " Easy update of vimrc
 nmap <Leader>s :source $MYVIMRC<cr>

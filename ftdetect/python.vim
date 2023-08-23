@@ -13,6 +13,8 @@ function Python_set_up()
     setlocal smarttab
     setlocal expandtab
     setlocal autoindent
+    set dictionary+=./dict/python
+    set complete+=k
 endfunction
 
 augroup python
