@@ -63,6 +63,7 @@ if v:version >= 800
     let g:ale_sign_column_always=1
     let g:ale_linters = {
     \  'scala': ['metals'],
+    \  'python': ['pyright'],
     \}
     let g:ale_fixers = {
     \  'scala': ['scalafmt','trim_whitespace', 'remove_trailing_lines'],
