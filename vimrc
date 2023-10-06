@@ -1,4 +1,6 @@
 set backspace=eol,start,indent
+" Shhhhh, be silent... 
+set belloff=all
 " line numbering set
 set nu
 set rnu
@@ -55,7 +57,6 @@ augroup autosave
         \ | silent write | endif
 augroup end
 
-
 " Packs! 
 if v:version >= 800
     packadd! ale
@@ -64,11 +65,17 @@ if v:version >= 800
     let g:ale_linters = {
     \  'scala': ['metals'],
     \  'python': ['pyright'],
+      \   'haskell': ['stack_ghc','cabal_ghc','hlint', 'hdevtools'],
     \}
     let g:ale_fixers = {
-    \  'scala': ['scalafmt','trim_whitespace', 'remove_trailing_lines'],
+    \  'scala':   ['scalafmt', 'trim_whitespace', 'remove_trailing_lines'],
+    \  'python':  ['black', 'trim_whitespace', 'remove_trailing_lines'],
+    \  'haskell': ['hfmt', 'trim_whitespace', 'remove_trailing_lines'],
     \}
+    let g:ale_haskell_hls_config = {'haskell': {'maxCompletions': 250}}
 
+    let g:ale_hover_cursor=1 
+    let g:ale_hover_to_floating_preview=1 
     nnoremap <silent> <leader>f :ALEFix<CR>
     nnoremap <silent> <leader>e :ALEToggle<CR>
     nnoremap <silent> ]e :ALENextWrap<CR>
@@ -79,6 +86,7 @@ if v:version >= 800
 
     packadd! vim-gutentags
     packadd! termdebug
+    packadd! vim-tmux-navigator
 endif
 
 " Netrw 
@@ -92,7 +100,7 @@ let g:netrw_banner=0
 nnoremap <space> :nohlsearch<bar>:echo<cr>
 
 " auto completion
-set completeopt=menu,longest,menuone,noselect,preview,noinsert
+set completeopt=menu,longest,menuone,noselect,preview
 
 " Easy update of vimrc
 nmap <Leader>s :source $MYVIMRC<cr>

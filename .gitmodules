@@ -10,3 +10,6 @@
 [submodule "pack/plugins/opt/ale"]
 	path = pack/plugins/opt/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "pack/plugins/opt/vim-tmux-navigator"]
+	path = pack/plugins/opt/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
