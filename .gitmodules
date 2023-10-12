@@ -13,3 +13,8 @@
 [submodule "pack/plugins/opt/vim-tmux-navigator"]
 	path = pack/plugins/opt/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "pack/plugins/start/typst"]
+	path = pack/plugins/start/typst
+	url = git@github.com:kaarmu/typst.vim.git
+[submodule "git@github.com:mbirko/typst.vim.git"]
+	url = pack/plugins/start/typst
