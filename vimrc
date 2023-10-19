@@ -18,7 +18,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
+" Enable filetype plugins
+filetype plugin indent on
 syntax on
 
 " No swap file
@@ -87,6 +88,8 @@ if v:version >= 800
     packadd! vim-gutentags
     packadd! termdebug
     packadd! vim-tmux-navigator
+
+    " For the typst filetype plugin: 
 endif
 
 " Netrw 
