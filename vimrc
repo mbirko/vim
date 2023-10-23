@@ -60,6 +60,7 @@ augroup end
 
 " Packs! 
 if v:version >= 800
+    packadd! copilot.vim
     packadd! ale
     let g:ale_completion_enabled=1
     let g:ale_sign_column_always=1
@@ -75,15 +76,17 @@ if v:version >= 800
     \}
     let g:ale_haskell_hls_config = {'haskell': {'maxCompletions': 250}}
 
-    let g:ale_hover_cursor=1 
-    let g:ale_hover_to_floating_preview=1 
+    let g:ale_set_ballons=1 
+    let g:ale_hover_to_floating_preview=1
     nnoremap <silent> <leader>f :ALEFix<CR>
     nnoremap <silent> <leader>e :ALEToggle<CR>
     nnoremap <silent> ]e :ALENextWrap<CR>
     nnoremap <silent> [e :ALEPreviousWrap<CR>
-    nnoremap <leader>r :ALEFindReferences -quickfix<CR> :cwindow<cr>
-    nnoremap <leader>i :ALEGoToImplementation<CR>
-    nnoremap <leader>d :ALEGoToDefinition<CR>
+    nnoremap <leader>r :ALERename<CR>
+    nnoremap gr :ALEFindReferences -quickfix<CR> :cwindow<cr>
+    nnoremap gi :ALEGoToImplementation<CR>
+    nnoremap gd :ALEGoToDefinition<CR>
+    nnoremap K :ALEHover<CR>
 
     packadd! vim-gutentags
     packadd! termdebug
@@ -103,7 +106,7 @@ let g:netrw_banner=0
 nnoremap <space> :nohlsearch<bar>:echo<cr>
 
 " auto completion
-set completeopt=menu,longest,menuone,noselect,preview
+set completeopt=menu,longest,menuone,preview
 
 " Easy update of vimrc
 nmap <Leader>s :source $MYVIMRC<cr>

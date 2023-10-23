@@ -18,3 +18,6 @@
 	url = git@github.com:kaarmu/typst.vim.git
 [submodule "git@github.com:mbirko/typst.vim.git"]
 	url = pack/plugins/start/typst
+[submodule "pack/plugins/opt/copilot.vim"]
+	path = pack/plugins/opt/copilot.vim
+	url = https://github.com/github/copilot.vim.git
