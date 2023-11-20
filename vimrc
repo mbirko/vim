@@ -55,24 +55,32 @@ augroup autosave
         \ if &readonly == 0
         \ && &filetype !=# "qf"
         \ && &filetype !=# "netrw"
+        \ && &filetype !=# "typst"
+        \ && &buftype !=# "nofile"
+        \ && &buftype !=# "nowrite"
+        \ && &buftype !=# "terminal"
         \ | silent write | endif
 augroup end
 
 " Packs! 
 if v:version >= 800
+    " sad :( 
     packadd! copilot.vim
+    " LSP client
     packadd! ale
     let g:ale_completion_enabled=1
     let g:ale_sign_column_always=1
     let g:ale_linters = {
     \  'scala': ['metals'],
     \  'python': ['pyright'],
-      \   'haskell': ['stack_ghc','cabal_ghc','hlint', 'hdevtools'],
+    \  'haskell': ['stack_ghc','cabal_ghc','hlint', 'hdevtools'],
+    \  'prolog': ['swipl'],
     \}
     let g:ale_fixers = {
     \  'scala':   ['scalafmt', 'trim_whitespace', 'remove_trailing_lines'],
     \  'python':  ['black', 'trim_whitespace', 'remove_trailing_lines'],
     \  'haskell': ['hfmt', 'trim_whitespace', 'remove_trailing_lines'],
+    \  'json': ['fixjson'],
     \}
     let g:ale_haskell_hls_config = {'haskell': {'maxCompletions': 250}}
 
@@ -87,12 +95,21 @@ if v:version >= 800
     nnoremap gi :ALEGoToImplementation<CR>
     nnoremap gd :ALEGoToDefinition<CR>
     nnoremap K :ALEHover<CR>
-
+    
+    " auto tags
     packadd! vim-gutentags
+    " native terminal deubber
     packadd! termdebug
+    " tmux navigator
     packadd! vim-tmux-navigator
-
-    " For the typst filetype plugin: 
+    " fzf
+    packadd! fzf.vim
+    packadd! fzf
+    " Source:
+    " https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
+    nnoremap <silent> <Leader>b :Buffers<CR>
+    nnoremap <silent> <C-f> :Files<CR>
+    nnoremap <silent> <Leader>f :Rg<CR>
 endif
 
 " Netrw 

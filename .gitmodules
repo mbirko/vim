@@ -21,3 +21,9 @@
 [submodule "pack/plugins/opt/copilot.vim"]
 	path = pack/plugins/opt/copilot.vim
 	url = https://github.com/github/copilot.vim.git
+[submodule "pack/plugins/opt/fzf.vim"]
+	path = pack/plugins/opt/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "pack/plugins/opt/fzf"]
+	path = pack/plugins/opt/fzf
+	url = git@github.com:junegunn/fzf.git

@@ -11,6 +11,7 @@ setlocal shiftwidth=4
 setlocal smarttab
 setlocal expandtab
 setlocal autoindent
+setlocal foldmethod=indent
 
 augroup python
     autocmd! 
