@@ -96,20 +96,29 @@ if v:version >= 800
     nnoremap gd :ALEGoToDefinition<CR>
     nnoremap K :ALEHover<CR>
     
-    " auto tags
-    packadd! vim-gutentags
     " native terminal deubber
     packadd! termdebug
+
+    " auto tags
+    if executable('ctags')
+        packadd! vim-gutentags
+    endif
+
     " tmux navigator
-    packadd! vim-tmux-navigator
+    if executable("tmux")
+        packadd! vim-tmux-navigator
+    endif
+    
     " fzf
-    packadd! fzf.vim
-    packadd! fzf
-    " Source:
-    " https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
-    nnoremap <silent> <Leader>b :Buffers<CR>
-    nnoremap <silent> <C-f> :Files<CR>
-    nnoremap <silent> <Leader>f :Rg<CR>
+    if executable("fzf")
+        packadd! fzf.vim
+        packadd! fzf
+        " Source:
+        " https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
+        nnoremap <silent> <Leader>b :Buffers<CR>
+        nnoremap <silent> <C-f> :Files<CR>
+        nnoremap <silent> <Leader>f :Rg<CR>
+    endif
 endif
 
 " Netrw 
