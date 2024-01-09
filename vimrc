@@ -66,6 +66,12 @@ augroup end
 if v:version >= 800
     " sad :( 
     packadd! copilot.vim
+    imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
+    let g:copilot_no_tab_map = v:true
+    " Enable and disaple Copilot
+    nnoremap <leader>l :Copilot enable<CR>
+    nnoremap <leader>L :Copilot disable<CR>
+     
     " LSP client
     packadd! ale
     let g:ale_completion_enabled=1
