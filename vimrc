@@ -56,9 +56,9 @@ augroup autosave
         \ && &filetype !=# "qf"
         \ && &filetype !=# "netrw"
         \ && &filetype !=# "typst"
-        \ && &buftype !=# "nofile"
-        \ && &buftype !=# "nowrite"
-        \ && &buftype !=# "terminal"
+        \ && &buftype  !=# "nofile"
+        \ && &buftype  !=# "nowrite"
+        \ && &buftype  !=# "terminal"
         \ | silent write | endif
 augroup end
 
